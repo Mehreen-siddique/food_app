@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/routes/app_routes.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -69,6 +70,45 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       validator: (value) =>
                       value!.isEmpty ? "Enter your password" : null,
+                    ),
+
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 56,
+                      child: ElevatedButton(
+                        // onPressed: _handleLogin,
+                        onPressed: (){},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.orange,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        child: const Text(
+                          'Sign In',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+
+                    ),
+
+                    const SizedBox(height: 30),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("Don't have an account? "),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, AppRoutes.signup);
+                          },
+                          child: const Text(
+                            'Sign Up',
+                            style: TextStyle(color: Colors.orange),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
 
