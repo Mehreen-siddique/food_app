@@ -53,6 +53,16 @@ class _SignupScreenState extends State<SignupScreen> {
                         color: Colors.black),
                   ),
                 ),
+                const SizedBox(height: 40),
+                TextFormField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Full Name',
+                    prefixIcon: Icon(Icons.person_outline),
+                  ),
+                  validator: (value) =>
+                  value!.isEmpty ? "Enter your name" : null,
+                ),
 
               ],
             )),
