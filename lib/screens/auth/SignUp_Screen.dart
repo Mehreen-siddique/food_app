@@ -26,6 +26,37 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: SafeArea(
+          child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24.0),
+            
+            child: Form(
+                child: Column(
+              children: [
+                const Center(
+                  child: Icon(Icons.restaurant_menu,
+                      size: 80, color: Colors.orange),
+                ),
+                const SizedBox(height: 24),
+                const Center(
+                  child: Text(
+                    'Create Account',
+                    style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  ),
+                ),
+
+              ],
+            )),
+      )),
 
     );
   }
