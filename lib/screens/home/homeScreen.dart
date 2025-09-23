@@ -76,6 +76,51 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
 
+      body: Column(
+        children: [
+          // category chips
+          SizedBox(
+            height: 50,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.all(8),
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+                final cat = categories[index];
+                final isSelected = cat == selectedCategory;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedCategory = cat;
+                    });
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isSelected ? Colors.orange : Colors.white,
+                      border: Border.all(
+                          color:
+                          isSelected ? Colors.orange : Colors.grey.shade300),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
+                      child: Text(
+                        cat,
+                        style: TextStyle(
+                          color: isSelected ? Colors.white : Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+
 
     );
   }
