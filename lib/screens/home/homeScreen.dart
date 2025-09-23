@@ -118,6 +118,32 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+          const SizedBox(height: 10),
+          // restaurant list
+          Expanded(
+            child: ListView.builder(
+              padding: const EdgeInsets.all(16),
+              itemCount: filteredRestaurants.length,
+              itemBuilder: (context, index) {
+                final r = filteredRestaurants[index];
+                return Card(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  child: ListTile(
+                    title: Text(r.name),
+                    subtitle: Text(r.description),
+                    trailing: Text("${r.rating} ⭐"),
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        AppRoutes.restaurantDetail,
+                        arguments: r,
+                      );
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
 
