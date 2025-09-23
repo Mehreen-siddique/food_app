@@ -1,3 +1,5 @@
+import 'package:food_app/screens/Models/Food_items_Models.dart';
+
 class RestaurantModel {
   final String id;
   final String name;
