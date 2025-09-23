@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/routes/app_routes.dart';
-import 'package:food_app/screens/splashScreen.dart';
+
 
 
 void main() {
@@ -19,8 +19,8 @@ class FoodDeliveryApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         fontFamily: 'Roboto',
       ),
-      home: const SplashScreen(),
-       routes: AppRoutes.routes,
+      initialRoute: AppRoutes.splash,
+      routes: AppRoutes.routes,
     );
   }
 }
