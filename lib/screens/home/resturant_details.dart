@@ -28,6 +28,21 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen> {
      const SizedBox(height: 20),
      const Text("Menu (Demo):"),
      const SizedBox(height: 10),
+     Expanded(
+       child: ListView.builder(
+         itemCount: restaurant.menuItems.length,
+         itemBuilder: (context, index) {
+           final item = restaurant.menuItems[index];
+           return Card(
+             child: ListTile(
+               title: Text(item.name),
+               subtitle: Text(item.description),
+               trailing: Text("\$${item.price}"),
+             ),
+           );
+         },
+       ),
+     ),
    ],
  ),
  ),
