@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/auth/Login_Screen.dart';
+import 'package:food_app/screens/auth/SignUp_Screen.dart';
+import 'package:food_app/screens/home/homeScreen.dart';
 
 import '../screens/splashScreen.dart';
 
@@ -16,8 +18,8 @@ class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
     splash: (context) => const SplashScreen(),
     login: (context) => const LoginScreen(),
-    // signup: (context) => const SignupScreen(),
-    // home: (context) => const HomeScreen(),
+    signup: (context) => const SignupScreen(),
+    home: (context) => const HomeScreen(),
     // restaurantDetail: (context) => const RestaurantDetailScreen(),
     // cart: (context) => const CartScreen(),
     // profile: (context) => const ProfileScreen(),

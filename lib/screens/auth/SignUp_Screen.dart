@@ -37,6 +37,7 @@ class _SignupScreenState extends State<SignupScreen> {
         padding: const EdgeInsets.all(24.0),
             
             child: Form(
+              key:_formKey ,
                 child: Column(
               children: [
                 const Center(
@@ -83,8 +84,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     prefixIcon: const Icon(Icons.lock_outline),
                     suffixIcon: IconButton(
                       icon: Icon(_obscurePassword
-                          ? Icons.visibility
-                          : Icons.visibility_off),
+                          ?Icons.visibility_off
+                          :Icons.visibility ),
                       onPressed: () {
                         setState(() {
                           _obscurePassword = !_obscurePassword;
@@ -105,8 +106,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     prefixIcon: const Icon(Icons.lock_outline),
                     suffixIcon: IconButton(
                       icon: Icon(_obscureConfirmPassword
-                          ? Icons.visibility
-                          : Icons.visibility_off),
+                          ? Icons.visibility_off
+                          : Icons.visibility),
                       onPressed: () {
                         setState(() {
                           _obscureConfirmPassword =
@@ -125,7 +126,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
-                    onPressed: _handleSignup,
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, AppRoutes.home);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange,
                       shape: RoundedRectangleBorder(
